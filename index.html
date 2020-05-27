@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <div class="content">
+        <p>Llevamos</p>
+        <p id="days" class="days"></p>
+        <p>días en</p>
+        <p>cuarentena</p>
+    </div>
+
+    <style>
+        body {
+            background-color: rgb(21, 32, 43);
+            color: white;
+        }
+
+        .content {
+            text-align: center;
+            font-size: 100px;
+        }
+
+        p {
+            margin: 0%;
+        }
+
+        .days {
+            text-emphasis: emphasis;
+        }
+
+    </style>
+
+    <script>
+        getDiff = () => {
+            const initDay = new Date('2020-3-19 00:00:00');
+            const today =  Date.now();
+            const diffTime = Math.abs(initDay - today);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+            return diffDays;
+        };
+        document.getElementById('days').innerHTML = getDiff();
+    </script>
+
+</body>
+
+</html>
