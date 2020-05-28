@@ -67,7 +67,9 @@
 
     <script>
         getDiff = () => {
-            const initDay = new Date('2020-3-19 00:00:00');
+            // const initDay = new Date('2020-3-19 00:00:00');
+            const t = '2020-3-19 00:00:00'.split(/[- :]/);
+	        const initDay = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             const today = Date.now();
             const diffTime = Math.abs(initDay - today);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
